@@ -14,9 +14,9 @@ public class Solution {
         occurrence.put('b', 1);
         occurrence.put('c', 1);
         for(int i=0; i < dataChar.length; i++){
-            char[] keys = occurrence.keySet().toArray();
+            
             for (int j=0; j<occurrence.keySet().size(); j++){
-                if(dataChar[i] == (toCharArray)occurrence.keySet().[i])
+                if(dataChar[i] == occurrence)
             }
         }
 

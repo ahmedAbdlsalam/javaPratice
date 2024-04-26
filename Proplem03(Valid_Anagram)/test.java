@@ -1,18 +1,35 @@
 import java.util.Dictionary;
 import java.util.Enumeration;
+import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Set;
 
 public class test {
     
 
     public static void main(String[] args) {
-        Hashtable<Character,Integer> table= new Hashtable<>();
+        // myClass c1 = new myClass();
 
+        Hashtable<Character, Integer> occurrence = new Hashtable<>();
+        occurrence.put('a', 1);
+        occurrence.put('b', 1);
+        occurrence.put('c', 1);
 
-        table.put('a', 1);
-        table.put('c', 2);
+        Set<Character> a = new HashSet<Character>();
+        a = occurrence.keySet();
+        Object[] arr = a.toArray();
+        for(int i=0; i<arr.length; i++){
+            System.out.println(arr[i]);
+        }
+        
+        // System.out.println(arr);
+        char[] JavaCharArray = {'r', 's', 't', 'u', 'v'};
 
         
 
     }
 }
+
+
+
+
