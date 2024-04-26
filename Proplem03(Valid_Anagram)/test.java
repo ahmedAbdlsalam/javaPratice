@@ -25,7 +25,9 @@ public class test {
         // System.out.println(arr);
         char[] JavaCharArray = {'r', 's', 't', 'u', 'v'};
 
-        
+        System.out.println(occurrence.get('a'));
+        occurrence.replace('a', occurrence.get('a')+1);
+        System.out.println(occurrence.get('a'));
 
     }
 }

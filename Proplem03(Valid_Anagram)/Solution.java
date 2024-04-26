@@ -1,7 +1,9 @@
 
 import java.util.Dictionary;
 import java.util.Enumeration;
+import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Set;
 
 public class Solution {
     
@@ -10,24 +12,25 @@ public class Solution {
         char[] dataChar = data.toCharArray();
 
         Hashtable<Character, Integer> occurrence = new Hashtable<>();
-        occurrence.put('a', 1);
-        occurrence.put('b', 1);
-        occurrence.put('c', 1);
+
         for(int i=0; i < dataChar.length; i++){
-            
-            for (int j=0; j<occurrence.keySet().size(); j++){
-                if(dataChar[i] == occurrence)
+
+            Set<Character> keysSet = new HashSet<Character>();
+            keysSet = occurrence.keySet();
+            String keysString = keysSet.toString();
+            char[] keys = keysString.toCharArray();
+            for (int j=0; j<keys.length; j++){
+
+                if(dataChar[i] == keys[j]){
+                    occurrence.replace(dataChar[i], (((Integer)occurrence.get(dataChar[i]))+1));
+                    break;
+                } else if (j == keys.length-1){
+                    occurrence.put(dataChar[i], 1);
+                }
+
+                
             }
         }
-
-        System.out.println(occurrence.keySet());
-  
-        // for (Character key: occurrence.keySet())
-        // {
-        //     System.out.println(key +"\b" + occurrence.get(key));
-        // }
-
-
         return occurrence;
     }
 
@@ -58,7 +61,7 @@ public class Solution {
     public static void main(String args[]){
 
         // System.out.println(isAnagram("rat", "car"));
-        charOccurrence("Ahmed");
+        System.out.println(charOccurrence("fAhmeeemed"));
         
     
     }
