@@ -1,36 +1,24 @@
 class Solution {
     public void moveZeroes(int[] nums) {
-        int reader = 0;
-        int writer = 0;
+     int writer =0;
 
-        do{
-            if(nums[reader] == 0){
-                reader++;
-            }else{
+     for(int reader =0; reader < nums.length; reader++){
+        if(nums[reader] != 0){
+            nums[writer] = nums[reader];
+            writer++;
+        }
 
-                if(nums[writer] == 0){
-                    nums[writer] = nums[reader];
-                    nums[reader] =0;
-            
-                    writer++;
-                }else{ writer++;}
 
-            }
-        }while(nums.length>reader);
+     }
 
-    }
-
-    public int[] arrayForwardSwap(int[] nums, int index){
+     while (writer<nums.length) {
+        nums[writer] = 0;
+        writer++;
         
-        int item1 = nums[index];
-        int item2 = nums[index+1];
-        int[] num = nums;
-
-        num[index] = item2;
-        num[index+1] = item1;
-
-        return num;
     }
+
+    }
+
 
 
 
