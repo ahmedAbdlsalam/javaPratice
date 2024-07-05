@@ -1,15 +1,23 @@
 class Solution {
     public void moveZeroes(int[] nums) {
+        int reader = 0;
+        int writer = 0;
 
-        for(int i=0; i<nums.length; i++){
+        do{
+            if(nums[reader] == 0){
+                reader++;
+            }else{
 
-            if(nums[i] == 0){
-                for(int j = i; j<nums.length-1; j++){
-                    nums = arrayForwardSwap(nums, j);
-                }
+                if(nums[writer] == 0){
+                    nums[writer] = nums[reader];
+                    nums[reader] =0;
+            
+                    writer++;
+                }else{ writer++;}
+
             }
-        }
-       
+        }while(nums.length>reader);
+
     }
 
     public int[] arrayForwardSwap(int[] nums, int index){
@@ -32,6 +40,7 @@ class Solution {
         int [] nums = {0,1,0,3,12};
         System.out.println(nums);
         s1.moveZeroes(nums);
-        System.out.println(nums);
+        
+
     }
 }

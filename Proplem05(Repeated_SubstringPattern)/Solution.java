@@ -20,15 +20,15 @@ public class Solution {
         return false;
     }
 
-    public static void main(String[] args) {
-        System.out.println("Hello mode");
+    // public static void main(String[] args) {
+    //     System.out.println("Hello mode");
 
-        String x = "abcabcabcabc";
-        // String y = "abcabcabcabc";
+    //     String x = "abcabcabcabc";
+    //     // String y = "abcabcabcabc";
         
-        // System.out.println( (x==y) ?  true:  false);
-        Solution s = new Solution();
-        System.out.println(s.repeatedSubstringPattern(x));
+    //     // System.out.println( (x==y) ?  true:  false);
+    //     Solution s = new Solution();
+    //     System.out.println(s.repeatedSubstringPattern(x));
 
     }
 }
