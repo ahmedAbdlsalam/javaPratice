@@ -1,24 +1,20 @@
 public class Solution {
 
     public boolean isMonotonic(int[] nums) {
-        boolean isMonotonicIncreading = true;
-        boolean isMonotonicDecreasing = true;
+        boolean isMonotonicIncreading = false;
+        boolean isMonotonicDecreasing = false;
 
         if(nums.length<0 || nums.length > Math.pow(10, 5)) return false;
         for (int i : nums) {
             if(i<Math.pow(-10, 5) || i>Math.pow(10, 5)) return false;
         }
 
-        for(int i=nums.length-1;i>0; i--){
-            for(int j=i-1;j>=0;j--){
-                if(nums[i]<nums[j]) isMonotonicDecreasing = false;
-            }
+        for(int i=0; i<nums.length-1; i++){
+            if(nums[i]>nums[i+1])  isMonotonicIncreading = false;
         }
 
-        for(int i=0; i<nums.length-1; i++){
-            for(int j=i+1; j<nums.length; j++){
-                if(nums[i]<nums[j])  isMonotonicIncreading = false;
-            }
+        for(int i=0; i<nums.length-1 ; i++){
+            if(nums[i]<nums[i+1]) isMonotonicDecreasing = false;
         }
         System.out.println("isMonotonicDecreasing:- "+ isMonotonicDecreasing);
         System.out.println("isMonotonicIncreading:- "+ isMonotonicIncreading);
