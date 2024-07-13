@@ -1,8 +1,8 @@
 public class Solution {
 
     public boolean isMonotonic(int[] nums) {
-        boolean isMonotonicIncreading = false;
-        boolean isMonotonicDecreasing = false;
+        boolean isMonotonicIncreading = true;
+        boolean isMonotonicDecreasing = true;
 
         if(nums.length<0 || nums.length > Math.pow(10, 5)) return false;
         for (int i : nums) {
