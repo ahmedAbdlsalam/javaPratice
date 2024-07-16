@@ -13,7 +13,7 @@ public class Solution {
                 stack.addFirst(top);
                 stack.addFirst(topNew);}
 
-            else stack.addFirst(Integer.valueOf(stringChar));
+            else if(stringChar!="C"&&stringChar!="D"&&stringChar!="+") stack.addFirst(Integer.valueOf(stringChar));
         }
 
         Iterator<Integer> i = stack.iterator();
@@ -27,7 +27,7 @@ public class Solution {
     }
     public static void main(String[] args) {
         System.out.println("Hello mode");
-        String[] input = new String[]{"5","-2","4","C","D","9","+","+"};
+        String[] input = new String[]{"5","2","C","D","+"};
         Solution s1 = new Solution();
         System.out.println(s1.calPoints(input));
         
